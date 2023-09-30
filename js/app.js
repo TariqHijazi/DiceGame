@@ -13,11 +13,9 @@ const totalScore1El = document.querySelector(".total1");
 
 let winMessage = "🎉 Congratulations 🎉 You win!";
 
-
 const btnRoll = document.querySelector(".roll");
 const btnHold = document.querySelector(".hold");
 const btnReset = document.querySelector(".reset");
-
 
 const switchPlayer = function () {
   player0El.classList.toggle("active-player");
@@ -68,16 +66,16 @@ btnRoll.addEventListener("click", () => {
     }
   }
 });
-function Finish(){
+function Finish() {
   play = false;
-      dice.classList.add("hidden");
-      if (score[0] >= 30) {
-        player0Title.textContent = winMessage;
-        switchPlayer();
-      } else if (score[1] >= 30) {
-        player1Title.textContent = winMessage;
-        switchPlayer();
-      }
+  dice.classList.add("hidden");
+  if (score[0] >= 30) {
+    player0Title.textContent = winMessage;
+    switchPlayer();
+  } else if (score[1] >= 30) {
+    player1Title.textContent = winMessage;
+    switchPlayer();
+  }
 }
 btnHold.addEventListener("click", () => {
   if (play) {
@@ -97,22 +95,20 @@ btnHold.addEventListener("click", () => {
         currentScore = 0;
         switchPlayer();
       }
-      if(score[0]>=30){
+      if (score[0] >= 30) {
         Finish();
-        setTimeout(function(){
-          
-          alert("🎉 Congratulations 🎉 player one is winner!")
-        },2000)
+        setTimeout(function () {
+          alert("🎉 Congratulations 🎉 player one is winner!");
+        }, 1000);
       }
-      if(score[1]>=30){
+      if (score[1] >= 30) {
         Finish();
 
-        setTimeout(function(){
-
-          alert("🎉 Congratulations 🎉 player two is winner!")
-        },2000)
+        setTimeout(function () {
+          alert("🎉 Congratulations 🎉 player two is winner!");
+        }, 1000);
       }
-    } 
+    }
   } else {
   }
 });
@@ -126,7 +122,7 @@ btnReset.addEventListener("click", () => {
   currentScore1.textContent = 0;
   totalScore0El.textContent = 0;
   totalScore1El.textContent = 0;
-  player0Title.textContent =  "Player 1";
+  player0Title.textContent = "Player 1";
   player1Title.textContent = "Player 2";
   player0El.classList.add("active-player");
   player0El.classList.remove("deactive-player");
@@ -134,6 +130,3 @@ btnReset.addEventListener("click", () => {
   player1El.classList.remove("active-player");
   dice.classList.add("hidden");
 });
-
-
-
